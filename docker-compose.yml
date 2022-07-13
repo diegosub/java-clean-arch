@@ -1,0 +1,23 @@
+version: "3.9"
+
+networks:
+  myspace-network:
+    driver: bridge
+
+services:
+  myspace-postgres:
+    image: postgres:14.1
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=myspace
+    ports:
+      - "5432:5432"
+    volumes:
+      ## windows
+      - /postgres-data:/var/lib/postgresql/data
+      ## ubuntu
+      #  - /home/diego/Documents/postgres-data:/var/lib/postgresql/data
+      #  - ./create_myspace_db_test.sh:/docker-entrypoint-initdb.d/create_myspace_db_test.sh
+    networks:
+      - myspace-network

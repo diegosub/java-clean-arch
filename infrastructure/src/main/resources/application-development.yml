@@ -1,0 +1,18 @@
+postgres:
+  username: postgres
+  password: postgres
+  database: myspace
+  url: localhost:5432
+
+server:
+  port: 8080
+  undertow:
+    threads:
+      worker: 10
+      io: 2
+
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 3

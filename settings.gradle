@@ -1,0 +1,6 @@
+rootProject.name = 'sboot-ms-conpact-myspace'
+include 'domain'
+include 'application'
+include 'application'
+include 'infrastructure'
+

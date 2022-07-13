@@ -1,0 +1,41 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /v1/api
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  undertow:
+    threads:
+      worker: 64
+      io: 4
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${postgres.url}/${postgres.database}
+    username: ${postgres.username}
+    password: ${postgres.password}
+    hikari:
+      pool-name: master
+      auto-commit: false
+      connection-timeout: 250
+      max-lifetime: 600000
+      maximum-pool-size: 20
+      minimum-idle: 10
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        generate_statistics: false
+        connection:
+          provider_disables_autocommit: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+      fail-on-ignored-properties: true
