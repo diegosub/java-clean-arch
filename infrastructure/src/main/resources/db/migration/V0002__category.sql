@@ -1,4 +1,4 @@
-CREATE TABLE main.category (
+CREATE TABLE category (
     id VARCHAR(36) NOT NULL,
     name VARCHAR(255) NOT NULL,
     active BOOLEAN NOT NULL DEFAULT TRUE,
@@ -8,6 +8,3 @@ CREATE TABLE main.category (
 
     CONSTRAINT pk_usuario PRIMARY KEY (id)
 );
-
-ALTER TABLE IF EXISTS main.category
-    OWNER to postgres;

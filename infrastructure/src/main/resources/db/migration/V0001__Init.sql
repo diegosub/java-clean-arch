@@ -1,2 +1,1 @@
-CREATE SCHEMA main
-    AUTHORIZATION postgres;
+CREATE SCHEMA main;
